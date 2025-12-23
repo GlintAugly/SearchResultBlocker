@@ -1,0 +1,40 @@
+{
+  "manifest_version": 2,
+  "name": "SearchResultBlocker",
+  "version": "1.0",
+
+  "description": "Blocks search results from specified URLs.",
+  "icons": {
+      "48": "images/stash_result-48.png"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "searchresultblocker@glntaugly",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    }
+  },
+  
+  "browser_action": {
+    "default_icon": "images/stash_result-48.png",
+    "default_title": "拡張機能のオプションを開く"
+  },
+  "content_scripts": [
+      {
+          "matches": [
+              "*://www.google.com/search*",
+              "*://duckduckgo.com/*"
+          ],
+          "js": ["stash_search_result.js"]
+      }
+  ],
+  "options_ui": {
+      "page": "options.html",
+      "open_in_tab": true
+  },
+  "permissions": ["storage", "tabs", "activeTab"],
+  "background": {
+    "scripts": ["background.js"]
+  }
+}

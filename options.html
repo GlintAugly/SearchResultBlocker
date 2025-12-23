@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>非表示ドメイン設定</title>
+  <style>
+    body {
+      padding: 20px;
+    }
+    textarea {
+      width: 100%;
+      height: 150px;
+    }
+    button {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>非表示にするURL</h1>
+  <p>
+  1行に1ルールずつ入力してください。<br>
+  例:<br>
+  example.com<br>
+  example.com/news/<br>
+  example.com/blog/article
+  </p>
+
+  <textarea id="rules"></textarea>
+  <br>
+  <button id="save">保存</button>
+  <span id="result"></span>
+
+  <script src="options.js"></script>
+</body>
+</html>
